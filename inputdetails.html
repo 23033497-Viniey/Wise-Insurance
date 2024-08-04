@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseInsurance - Input Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .get-testimonial-btn {
+            background-color: #000;
+            color: #fff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .get-testimonial-btn:hover {
+            background-color: #333;
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/wiseinsurance logo.png" alt="WiseInsurance Logo">
+                WiseInsurance
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">SignUp</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="digitalwallet.html">Digital Wallet</a></li>
+                <li><a href="testimonial.html" class="get-testimonial-btn">View Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Input Your Details</h1>
+        <form id="detailsForm">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+            </div>
+            <div class="form-group">
+                <label for="income">Annual Income:</label>
+                <input type="number" id="income" required>
+            </div>
+            <div class="form-group">
+                <label for="insuranceType">Insurance Type:</label>
+                <select id="insuranceType" required>
+                    <option value="">Select Insurance Type</option>
+                    <option value="health">Health Insurance</option>
+                    <option value="life">Life Insurance</option>
+                    <option value="auto">Auto Insurance</option>
+                </select>
+            </div>
+            <button type="submit">Submit Details</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('detailsForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const income = document.getElementById('income').value;
+            const insuranceType = document.getElementById('insuranceType').value;
+
+            // Store the details in localStorage (in a real app, you'd send this to a server)
+            localStorage.setItem('userDetails', JSON.stringify({ name, age, income, insuranceType }));
+
+            // Redirect to the recommendations page
+            window.location.href = 'recommendation.html';
+        };
+    </script>
+</body>
+</html>

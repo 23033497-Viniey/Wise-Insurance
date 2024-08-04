@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseInsurance - Review Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .recommendation {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .recommendation h2 {
+            margin-top: 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Recommendations</h1>
+        <div id="recommendationsContainer"></div>
+        <button onclick="proceedToChoose()">Proceed to View More Details</button>
+    </div>
+
+    <script>
+        function displayRecommendations() {
+            const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+            const container = document.getElementById('recommendationsContainer');
+
+            // In a real app, you'd generate recommendations based on user details
+            // Here, we'll just display some mock recommendations
+            const recommendations = [
+                {
+                    title: "Basic Plan",
+                    description: "Affordable coverage for essential needs.",
+                    price: "$50/month"
+                },
+                {
+                    title: "Standard Plan",
+                    description: "Comprehensive coverage for most situations.",
+                    price: "$100/month"
+                },
+                {
+                    title: "Premium Plan",
+                    description: "Full coverage with additional benefits.",
+                    price: "$200/month"
+                }
+            ];
+
+            recommendations.forEach(rec => {
+                const recElement = document.createElement('div');
+                recElement.className = 'recommendation';
+                recElement.innerHTML = `
+                    <h2>${rec.title}</h2>
+                    <p>${rec.description}</p>
+                    <p><strong>Price:</strong> ${rec.price}</p>
+                `;
+                container.appendChild(recElement);
+            });
+        }
+
+        function proceedToChoose() {
+            window.location.href = 'services.html';
+        }
+
+        displayRecommendations();
+    </script>
+</body>
+</html>

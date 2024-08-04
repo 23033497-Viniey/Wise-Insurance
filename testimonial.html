@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonials - WiseInsurance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .get-policy-btn {
+            background-color: #000;
+            color: #fff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .get-policy-btn:hover {
+            background-color: #333;
+        }
+        .testimonial {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h3 {
+            color: #007bff;
+        }
+        .case-study {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .case-study h3 {
+            color: #28a745;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-content h4 {
+            margin-bottom: 1rem;
+        }
+        .footer-content ul {
+            list-style: none;
+        }
+        .footer-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-content ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/wiseinsurance logo.png" alt="WiseInsurance Logo">
+                WiseInsurance
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">SignUp</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="digitalwallet.html">Digital Wallet</a></li>
+                <li><a href="testimonial.html" class="get-policy-btn">View Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Customer Testimonials and Case Studies</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="testimonial">
+                    <h3 class="text-center">John Doe</h3>
+                    <p>"WiseInsurance helped me find the perfect combination of policies for my needs. Their neutral recommendations saved me from overlapping coverage and unnecessary expenses."</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testimonial">
+                    <h3 class="text-center">Jane Smith</h3>
+                    <p>"I was overwhelmed by insurance options until I found WiseInsurance. Their personalized approach made it easy to understand and choose the right coverage for my family."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study mt-5">
+            <h3>Case Study: The Johnson Family</h3>
+            <p>The Johnsons, a family of four, came to WiseInsurance looking to optimize their insurance coverage. They had multiple policies from different providers and were concerned about gaps and overlaps in their coverage.</p>
+            <h4>Our Approach:</h4>
+            <ul>
+                <li>Conducted a comprehensive review of their existing policies</li>
+                <li>Identified areas of unnecessary overlap and potential gaps in coverage</li>
+                <li>Recommended a consolidated insurance package that provided better coverage at a lower overall cost</li>
+            </ul>
+            <h4>Results:</h4>
+            <p>The Johnsons were able to reduce their annual insurance expenses by 20% while improving their overall coverage. They now have a single point of contact for all their insurance needs, simplifying their financial management.</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Add Your Testimonial</h2>
+        <form id="testimonialForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="testimonial" class="form-label">Testimonial</label>
+                <textarea class="form-control" id="testimonial" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div id="testimonialContainer"></div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">WiseInsurance</div>
+            <div class="quick-links">                                               
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+        <div class="Customer Support">
+            <h4>Customer Support</h4>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            </div>
+            <div class="contact">
+                <h4>Contact Us</h4>
+                <p>+1 (555) 123-4567</p>
+                <p>wiseinsurance@gmail.com</p>
+                <p>123 Insurance Street, City, Country</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/link.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Sample testimonial data
+        const testimonials = [
+            { name: "Michael Brown", text: "WiseInsurance's advice helped me avoid duplicate coverage and save significantly on premiums." },
+            { name: "Sarah Lee", text: "Their customer service is outstanding. They took the time to understand my unique situation and found the perfect insurance solution." }
+        ];
+
+        // Function to create and append testimonials
+        function addTestimonials() {
+            const container = document.getElementById('testimonialContainer');
+            container.innerHTML = ''; // Clear existing testimonials
+            const row = document.createElement('div');
+            row.className = 'row mt-5';
+
+            testimonials.forEach(testimonial => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6';
+                col.innerHTML = `
+                    <div class="testimonial">
+                        <h3 class="text-center">${testimonial.name}</h3>
+                        <p>"${testimonial.text}"</p>
+                    </div>
+                `;
+                row.appendChild(col);
+            });
+
+            container.appendChild(row);
+        }
+
+        // Function to handle form submission
+        document.getElementById('testimonialForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const text = document.getElementById('testimonial').value;
+
+            testimonials.push({ name: name, text: text });
+            document.getElementById('testimonialForm').reset();
+            addTestimonials();
+        });
+
+        // Call the function when the page loads
+        window.onload = addTestimonials;
+    </script>
+</body>
+</html>
+
+

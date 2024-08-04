@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple WiseInsurance Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+        
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color:lightgray;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        #chatBox {
+            border: 1px solid #ccc;
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: black;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+
+        
+        .chat-option-button {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px 0;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .get-testimonial-btn {
+            background-color: #000;
+            color: #fff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .get-testimonial-btn:hover {
+            background-color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-content h4 {
+            margin-bottom: 1rem;
+        }
+        .footer-content ul {
+            list-style: none;
+        }
+        .footer-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-content ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+       
+    </style>
+</head>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/wiseinsurance logo.png" alt="WiseInsurance Logo">
+            WiseInsurance
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">SignUp</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="digitalwallet.html">Digital Wallet</a></li>
+            <li><a href="testimonial.html" class="get-testimonial-btn">View Testimonials</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <h1>Wise</h1>
+    <div id="chatBox"></div>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        // Get DOM elements
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+
+        // Initial bot message
+        addMessage("Bot: Hello! I'm Wise. How can I help you?");
+        showOptions();
+
+        // Function to add a message to the chat box
+        function addMessage(message) {
+            chatBox.innerHTML += message + "<br>";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Function to show options
+        function showOptions() {
+            const options = [
+                "Why can't I login to my account",
+                "How can I renew my HDB Fire Insurance",
+                "How can I renew my Car Insurance",
+                "How do I renew my Maid Insurance"
+            ];
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'chat-option-button';
+                button.innerText = option;
+                button.onclick = () => handleOption(option);
+                chatBox.appendChild(button);
+                chatBox.appendChild(document.createElement('br'));
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Function to handle user's message
+        function sendMessage() {
+            const message = userInput.value;
+            if (message) {
+                addMessage("You: " + message);
+                userInput.value = "";
+                handleUserInput(message);
+            }
+        }
+
+        // Function to handle user's input (message or option)
+        function handleUserInput(input) {
+            // Simple responses based on user input
+            if (input.toLowerCase().includes("login")) {
+                addMessage("Bot: To log in, please ensure you're using the correct email and password. If you're still having trouble, try resetting your password.");
+            } else if (input.toLowerCase().includes("renew")) {
+                addMessage("Bot: To renew your insurance, log into your account, go to 'My Policies', select the policy you want to renew, and follow the renewal process.");
+            } else {
+                addMessage("Bot: I'm not sure about that. Can you please select one of these options?");
+                showOptions();
+            }
+        }
+
+        // Function to handle option selection
+        function handleOption(option) {
+            addMessage("You selected: " + option);
+            handleUserInput(option);
+        }
+    </script>
+    <footer>
+        <div class="footer-content">
+            <div class="logo">WiseInsurance</div>
+            <div class="quick-links">                                               
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+        <div class="Customer Support">
+            <h4>Customer Support</h4>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            </div>
+        <div class="contact">
+            <h4>Contact Us</h4>
+            <p>+1 (555) 123-4567</p>
+            <p>wiseinsurance@gmail.com</p>
+            <p>123 Insurance Street, City, Country</p>
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="images/link.png" alt="LinkedIn"></a>
+        <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+    </div>
+</footer>
+</body>
+</html>

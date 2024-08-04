@@ -47,14 +47,14 @@
             color: #333;
             font-size: 0.9rem;
         }
-        .get-quote-btn {
+        .get-testimonial-btn {
             background-color: #000;
             color: #fff !important;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-        .get-quote-btn:hover {
+        .get-testimonial-btn:hover {
             background-color: #333;
         }
         .hero {
@@ -63,6 +63,7 @@
             background-position: center;
             margin-right:20px;
             padding: 20rem 5rem;
+            text-align: left;
         }
         .hero h1 {
             font-size: 1.5rem;
@@ -71,25 +72,15 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            align-items: center;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            font-family: inherit;
-            margin-bottom: 5rem;
             text-align: left;
         }
-        .cta-button {
-            background-color: #000;
-            color: #fff;
-            padding: 0.7rem 1.5rem;
+        .hero .overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
             border-radius: 5px;
-            text-decoration: none;
+            max-width: 800px;
         }
-        .cta-button:hover {
-            background-color: #333;
-        }
+
         .features {
             padding: 3rem 1rem;
             text-align: center;
@@ -109,6 +100,31 @@
             width: 180px;
             height: 150px;
             margin-inline-start: 8rem;
+        }
+        .ai-chat-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: flex-end;
+            z-index: 1000;
+            color: white;
+        }
+
+        .ai-chat-box .chat-bubble {
+            background-color: lightgrey;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            font-size: 14px;
+            max-width: 200px;
+        }
+
+        .ai-chat-box img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         footer {
@@ -162,36 +178,41 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="digitalwallet.html">Digital Wallet</a></li>
-                <li><a href="#" class="get-quote-btn">Get Quote</a></li>
+                <li><a href="newwallet.html">Digital Wallet</a></li>
+                <li><a href="testimonial.html" class="get-testimonial-btn">View Testimonials</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="hero">
-            <h1>Welcome to WiseInsurance! We"re thrilled to have you here and appreciate your interest in our platform. At WiseInsurance, 
-                we aim to revolutionize the way you manage your insurance policies, 
-                making it easier, more transparent, and more efficient</h1>  
-               <a href="#" class="cta-button">Contact Us</a>
+            <div class="overlay">
+                <h1>Welcome to WiseInsurance! We're thrilled to have you here and appreciate your interest in our platform. At WiseInsurance, we aim to revolutionize the way you manage your insurance policies, making it easier, more transparent, and more efficient.</h1>  
+            </div>
         </section>
     </main>
+    <div class="ai-chat-box">
+        <div class="chat-bubble">
+            <a href="ai-bot.html"></style>Can I help you?</a>
+        </div>
+        <img src="images/aichat.gif" alt="AI Assistant">
+    </div>
     <footer>
-        <div class="footer-content">
-            <div class="logo">WiseInsurance</div>
-            <div class="quick-links">
-                <h4>Quick Links</h4>
+            <div class="footer-content">
+                <div class="logo">WiseInsurance</div>
+                <div class="quick-links">                                               
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+            <div class="Customer Support">
+                <h4>Customer Support</h4>
                 <ul>
-                    <li><a href="#">Risk Assessment</a></li>
-                    <li><a href="#">Coverage View</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
-            </div>
-            <div class="services">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                </ul>
-            </div>
+                </div>
             <div class="contact">
                 <h4>Contact Us</h4>
                 <p>+1 (555) 123-4567</p>
